@@ -26,14 +26,14 @@ public class ZoomInObject : MonoBehaviour, IInteractable
             cameraBounds.GetComponent<BoxCollider2D>().size.x / 2)
         {
             Camera.main.transform.position += new Vector3(cameraBounds.transform.position.x +
-                cameraBounds.GetComponent<BoxCollider2D>().size.x / 2 - (Camera.main.transform.position.x + width), 0, 0);
+                cameraBounds.GetComponent<BoxCollider2D>().size.x / 2 - (Camera.main.transform.position.x + width + 0.5f), 0, 0);
         }
         
         if (Camera.main.transform.position.x - width < cameraBounds.transform.position.x -
             cameraBounds.GetComponent<BoxCollider2D>().size.x / 2)
         {
             Camera.main.transform.position += new Vector3(cameraBounds.transform.position.x -
-                cameraBounds.GetComponent<BoxCollider2D>().size.x / 2 - (Camera.main.transform.position.x - width), 0, 0);
+                cameraBounds.GetComponent<BoxCollider2D>().size.x / 2 - (Camera.main.transform.position.x - width - 0.5f), 0, 0);
         }
         
         if (Camera.main.transform.position.y + height > cameraBounds.transform.position.y +
