@@ -37,8 +37,11 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - somoe layer
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1906662603
     locked: 0
