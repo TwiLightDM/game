@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -14,6 +12,7 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (Camera.main == null) return;
             Vector2 rayPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(rayPosition, Vector2.zero, 100);
 

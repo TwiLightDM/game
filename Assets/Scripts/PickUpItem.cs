@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class PickUpItem : MonoBehaviour, IInteractable
@@ -21,13 +19,6 @@ public class PickUpItem : MonoBehaviour, IInteractable
     {
         ItemPickUp();
     }
-    void Start()
-    {
-        
-        
-    }
-
-    
 
     public void ItemPickUp()
     {
@@ -35,7 +26,7 @@ public class PickUpItem : MonoBehaviour, IInteractable
         foreach (Transform slot in _inventorySlots.transform)
         {
             
-            //если первй слот пуст, кладем туда айтем
+            //если первый слот пуст, кладем туда айтем
             if (slot.transform.GetChild(0).GetComponent<Image>().sprite.name == "empty_item")
             {
                 slot.transform.GetChild(0).GetComponent<Image>().sprite =

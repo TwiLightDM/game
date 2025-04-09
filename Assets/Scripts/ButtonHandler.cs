@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class ButtonHandler : MonoBehaviour
     void Start()
     {
         _currentDisplay = GameObject.Find("displayImage").GetComponent<DisplayImage>();
+        if (Camera.main == null) return;
         _initialCameraSize = Camera.main.orthographicSize;
         _initialCameraPosition = Camera.main.transform.position;
     }
@@ -36,7 +36,7 @@ public class ButtonHandler : MonoBehaviour
             {
                 zoomInObject.gameObject.layer = 0;
             }
-
+            if (Camera.main == null) return;
             Camera.main.orthographicSize = _initialCameraSize;
             Camera.main.transform.position = _initialCameraPosition;
         }
@@ -46,5 +46,15 @@ public class ButtonHandler : MonoBehaviour
                 Resources.Load<Sprite>("Sprites/room" + _currentDisplay.CurrentRoom);
             _currentDisplay.CurrentState = DisplayImage.State.Normal;
         }
+    }
+
+    public void OnPlayClick()
+    {
+        SceneManager.LoadScene("HouseOne");
+    }
+    
+    public void OnExitClick()
+    {
+        Application.Quit();
     }
 }
