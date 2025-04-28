@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class ButtonBehaviour : MonoBehaviour
 {
+    
     public enum ButtonId
     {
         RoomChangeButton,
@@ -10,9 +11,10 @@ public class ButtonBehaviour : MonoBehaviour
     }
     public ButtonId thisButtonid;
     private DisplayImage _currentDisplay;
-
+    
     void Start()
     {
+       
         _currentDisplay = GameObject.Find("displayImage").GetComponent<DisplayImage>();
     }
 

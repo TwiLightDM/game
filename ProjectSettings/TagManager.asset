@@ -12,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - key
-  - 
+  - Background
+  - Top
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1906662603
+    locked: 0
+  - name: Top
+    uniqueID: 2419981469
     locked: 0

@@ -7,7 +7,8 @@ public class ExitDoor : MonoBehaviour, IInteractable
     public GameObject changedStateSprite;
     public string unlockItem;
     public GameObject escapeMessage;
-    
+    [SerializeField] private AudioClip openDoorSoundSound;
+    [SerializeField] private AudioClip lockedDoorSound;
     private GameObject _inventory;
     
 
@@ -24,12 +25,16 @@ public class ExitDoor : MonoBehaviour, IInteractable
         if (_inventory.GetComponent<Inventory>().CurrentSelectedSlot.gameObject.transform.GetChild(0)
                 .GetComponent<Image>().sprite.name==unlockItem|| unlockItem=="")
         {
+            SoundManager.instance.PlaySound(openDoorSoundSound);
             changedStateSprite.SetActive(true);
             gameObject.layer = 2;
             
             Instantiate(escapeMessage, GameObject.Find("Canvas").transform);
 
             StartCoroutine(LoadMenu());
+        }
+        else{
+           SoundManager.instance.PlaySound(lockedDoorSound);
         }
     }
 

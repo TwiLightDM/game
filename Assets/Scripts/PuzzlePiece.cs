@@ -5,7 +5,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler
 {
     private GameObject _puzzle;
     private Image _changeSprite;
-
+    [SerializeField] private AudioClip movingSound;
     public void Start()
     {
         _puzzle = GameObject.Find("Puzzle");
@@ -56,6 +56,7 @@ public class PuzzlePiece : MonoBehaviour, IPointerClickHandler
         Sprite temp = firstSprite.sprite;
         firstSprite.sprite = secondSprite.sprite;
         secondSprite.sprite = temp;
+        SoundManager.instance.PlaySound(movingSound);
         
     }
 }

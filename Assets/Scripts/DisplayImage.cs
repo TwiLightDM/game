@@ -10,6 +10,8 @@ public class DisplayImage : MonoBehaviour
     };
 
     public State CurrentState { get; set; }
+    
+    public string spriteName;
 
     public int CurrentRoom
     {
@@ -44,7 +46,8 @@ public class DisplayImage : MonoBehaviour
     {
         if (_currentRoom != _previousRoom)
         {
-            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/room" + _currentRoom.ToString());
+            // GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/room" + _currentRoom.ToString());
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(spriteName + _currentRoom.ToString());
         }
 
         _previousRoom = _currentRoom;

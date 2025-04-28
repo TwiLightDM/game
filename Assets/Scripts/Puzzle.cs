@@ -7,6 +7,7 @@ public class Puzzle : MonoBehaviour
         get;
         private set;
     }
+    
 //название не менять
     public GameObject ClaimItem;
     private bool _itemSpawn;
@@ -25,8 +26,10 @@ public class Puzzle : MonoBehaviour
         //если выполнили пазл, спавним ключ
         if (CompletePuzzle()&& !_itemSpawn)
         {
+            
             var claimItem = Instantiate(ClaimItem, GameObject.Find("piece8").transform,false);
             claimItem.transform.localScale = new Vector3(15, 15, 15);
+          
             _itemSpawn = true;
         }
         HideDisplay();

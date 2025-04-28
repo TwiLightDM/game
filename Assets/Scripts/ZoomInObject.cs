@@ -3,9 +3,11 @@
 public class ZoomInObject : MonoBehaviour, IInteractable
 {
     public float ZoomRatio = .5f;
+    [SerializeField] private AudioClip footstepSound;
 
     public void Interact(DisplayImage currentDisplay)
     {
+        SoundManager.instance.PlaySound(footstepSound);
         Camera.main.orthographicSize *= ZoomRatio;
         Camera.main.transform.position = new Vector3(this.transform.position.x, this.transform.position.y,
             Camera.main.transform.position.z);

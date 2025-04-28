@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
     public GameObject CurrentSelectedSlot { get; set; }
     public GameObject PreviousSelectedSlot { get; set; }
-
+    public Slot CurrentDraggedSlot { get; set; }
     private GameObject _slots;
     public GameObject itemDisplayer { get; private set; }
 
@@ -46,7 +46,8 @@ public class Inventory : MonoBehaviour
             Image slotImage = slot.GetComponent<Image>();
 
             // Проверяем, выбран ли текущий слот и является ли он Usable
-            if (slot.gameObject == CurrentSelectedSlot && slot.GetComponent<Slot>().ItemProperty == Slot.Property.Usable)
+            if (slot.gameObject == CurrentSelectedSlot && slot.GetComponent<Slot>().ItemProperty == Slot.Property.Usable
+            ||slot.gameObject == CurrentSelectedSlot && slot.GetComponent<Slot>().ItemProperty == Slot.Property.SeeAndClick)
             {
                 // Устанавливаем цвет выделения
                 slotImage.color = new Color(0.9f, 0.1f, 0.6f, 1f);

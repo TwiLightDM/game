@@ -18,8 +18,10 @@ public class ObjectsManage : MonoBehaviour
     
     void ManageObjects()
     {
+        
         foreach (GameObject objectToManage in objectsToManage)
         {
+            if (objectToManage!=null){
             if (objectToManage.name == _currentDisplay.GetComponent<SpriteRenderer>().sprite.name)
             {
                 objectToManage.SetActive(true);
@@ -28,6 +30,7 @@ public class ObjectsManage : MonoBehaviour
             {
                 objectToManage.SetActive(false);
             }
+        }
         }
     }
     

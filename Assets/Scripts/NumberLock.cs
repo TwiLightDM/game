@@ -6,7 +6,7 @@ public class NumberLock : MonoBehaviour
     public string password;
     public GameObject openLockerSprite;
     private GameObject displayImage;
-    
+    [SerializeField] private AudioClip openLocker;
     [HideInInspector]
     public Sprite[] numbersSprites;
     [HideInInspector]
@@ -51,6 +51,7 @@ public class NumberLock : MonoBehaviour
         {
             _isOpen = true;
             openLockerSprite.SetActive(true);
+            SoundManager.instance.PlaySound(openLocker);
 
             for (int i = 0; i < currentIndividualIndex.Length; i++)
             {

@@ -14,8 +14,11 @@ public class Chess : MonoBehaviour, IPointerClickHandler
     public GameObject obtainItem;
     
     private GameObject _displayImage;
+    [SerializeField] private AudioClip openDoorSound;
+    
     void Start()
     {
+        
         _displayImage= GameObject.Find("displayImage");
         obtainItem.SetActive(false);
         screenPanel.SetActive(false);
@@ -50,6 +53,7 @@ public class Chess : MonoBehaviour, IPointerClickHandler
                 Destroy(screenPanel);
                 Debug.Log("Password Correct");
                 GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/chess_solved");
+                SoundManager.instance.PlaySound(openDoorSound);
                 obtainItem.SetActive(true);
             }
         }

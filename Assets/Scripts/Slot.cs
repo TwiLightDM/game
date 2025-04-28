@@ -5,12 +5,20 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour, IPointerClickHandler
 {
     private GameObject _inventory;
-    public enum Property { Usable, Displayable, Empty };
+    public enum Property { Usable, Displayable,SeeAndClick, Empty };
     public Property ItemProperty { get; set; }
 
     private string _displayImage;
+
+    
     
     public string CombinationItem { get; private set; }
+    [SerializeField] private AudioClip displayItemSound;
+    [SerializeField] private AudioClip combineItemSound;
+    
+    [SerializeField] private AudioClip otherCombineItemSound;
+    private float lastClickTime;
+    private const float doubleClickTime = 0.3f;
 
     void Start()
     {
@@ -37,9 +45,24 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
         if (ItemProperty == Property.Displayable) 
         {
+            SoundManager.instance.PlaySound(displayItemSound);
             DisplayItem();
         }
+        if (ItemProperty == Property.SeeAndClick)
+        {
+            // Проверка на двойной клик
+            if (Time.time - lastClickTime < doubleClickTime)
+            {
+                // Двойной клик - показываем предмет
+                SoundManager.instance.PlaySound(displayItemSound);
+                DisplayItem();
+            }
+        }
+        lastClickTime = Time.time;
     }
+
+
+     
 
     public void AssignProperty(int orderNumber, string displayImage, string combinationItem)
     {
@@ -67,10 +90,14 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
         Slot previousSlot = inventory.PreviousSelectedSlot.GetComponent<Slot>();
         Slot currentSlot = GetComponent<Slot>();
-
+        
         // Проверяем, что оба слота содержат предметы для комбинации
         if (previousSlot == null || currentSlot == null) return;
         if (previousSlot.ItemProperty == Property.Empty || currentSlot.ItemProperty == Property.Empty) return;
+        
+        // Проверяем, что предыдущий и текущий слот - разные
+        if (inventory.PreviousSelectedSlot == inventory.CurrentSelectedSlot) return;
+        
         if (string.IsNullOrEmpty(previousSlot.CombinationItem) || string.IsNullOrEmpty(currentSlot.CombinationItem)) return;
 
         if (previousSlot.CombinationItem == currentSlot.CombinationItem)
@@ -83,7 +110,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 {
                     pickUpItem.ItemPickUp();
                 }
-
+                SoundManager.instance.PlaySound(combineItemSound);
+              
+                SoundManager.instance.PlaySound(otherCombineItemSound);
                 previousSlot.ClearSlot();
                 currentSlot.ClearSlot();
             }
