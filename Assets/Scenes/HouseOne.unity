@@ -4461,6 +4461,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7911442859333226093, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
+      propertyPath: m_Size.x
+      value: 2.0348485
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911442859333226093, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5243266
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911442859333226093, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.51742435
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911442859333226093, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.7621633
+      objectReference: {fileID: 0}
     - target: {fileID: 7911442859333226094, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
       propertyPath: footstepSound
       value: 
@@ -4700,6 +4716,14 @@ PrefabInstance:
     - target: {fileID: 7911442859333226092, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911442859333226093, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
+      propertyPath: m_Size.y
+      value: 2.070234
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911442859333226093, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.77835196
       objectReference: {fileID: 0}
     - target: {fileID: 7911442859333226094, guid: afff43af80cef2c438971bcf7b6e3b6e, type: 3}
       propertyPath: footstepSound
@@ -8351,8 +8375,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 226312557}
   m_HandleRect: {fileID: 226312556}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6666666
+  m_Value: 0.9999994
+  m_Size: 0.66666675
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9150,8 +9174,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1192141997}
   m_HandleRect: {fileID: 1192141996}
   m_Direction: 0
-  m_Value: -0.000000078199534
-  m_Size: 0.48531413
+  m_Value: -0.00000015639911
+  m_Size: 0.4853142
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10467,7 +10491,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.22435236, y: 0.7179277}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10478,7 +10502,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4487047, y: 2.4358552}
   m_EdgeRadius: 0
 --- !u!1 &1924810874
 GameObject:
