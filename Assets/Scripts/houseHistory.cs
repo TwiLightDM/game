@@ -11,14 +11,13 @@ public class houseHistory : MonoBehaviour
     
     [SerializeField] private AudioClip houseTheme;
     private float checkDelay = 25f; // Задержка перед повторным включением
-    private float timer = 0f;
-    private bool isThemePlaying = false;
+    private float timer;
+    private bool isThemePlaying;
     void Start()
     {
         SoundManager.instance.PlaySound(apperSound); 
     }
-
-    // Update is called once per frame
+    
     private void Update()
     {
         // Если музыка должна играть, но её остановили

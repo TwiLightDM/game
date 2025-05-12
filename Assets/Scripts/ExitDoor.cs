@@ -11,15 +11,12 @@ public class ExitDoor : MonoBehaviour, IInteractable
     [SerializeField] private AudioClip lockedDoorSound;
     private GameObject _inventory;
     
-
     void Start()
     {
         changedStateSprite.SetActive(false);
         _inventory = GameObject.Find("Inventory");
-       
     }
     
-
     public void Interact(DisplayImage currentDisplay)
     {
         if (_inventory.GetComponent<Inventory>().CurrentSelectedSlot.gameObject.transform.GetChild(0)
@@ -32,6 +29,10 @@ public class ExitDoor : MonoBehaviour, IInteractable
             Instantiate(escapeMessage, GameObject.Find("Canvas").transform);
 
             StartCoroutine(LoadMenu());
+            
+            string currentScene = SceneManager.GetActiveScene().name;
+            if (currentScene == "HouseOne") PlayerPrefs.SetInt("Level2Unlocked", 1);
+            else if (currentScene == "HouseTwo") PlayerPrefs.SetInt("Level3Unlocked", 1);
         }
         else{
            SoundManager.instance.PlaySound(lockedDoorSound);

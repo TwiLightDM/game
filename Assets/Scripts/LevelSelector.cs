@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelSelector : MonoBehaviour
 {
     [SerializeField] private AudioClip buttonClickSound;
-    void Start()
+    public bool debug;
+    
+    private void Start()
     {
-        
+        if (!PlayerPrefs.HasKey("Level2Unlocked")) PlayerPrefs.SetInt("Level2Unlocked", 0);
+        if (!PlayerPrefs.HasKey("Level3Unlocked")) PlayerPrefs.SetInt("Level3Unlocked", 0);
     }
-
+    
     public void OpenHouse1()
     {
         SceneManager.LoadScene("HouseOne");
@@ -18,12 +21,20 @@ public class LevelSelector : MonoBehaviour
     }
     public void OpenHouse2()
     {
-        SceneManager.LoadScene("HouseTwo");
+        if (debug || PlayerPrefs.GetInt("Level2Unlocked") == 1)
+        {
+            SceneManager.LoadScene("HouseTwo");
+            SoundManager.instance.PlaySound(buttonClickSound);
+        }
         SoundManager.instance.PlaySound(buttonClickSound);
     }
     public void OpenHouse3()
     {
-        SceneManager.LoadScene("HouseThree");
+        if (debug || PlayerPrefs.GetInt("Level3Unlocked") == 1)
+        {
+            SceneManager.LoadScene("HouseThree");
+            SoundManager.instance.PlaySound(buttonClickSound);
+        }
         SoundManager.instance.PlaySound(buttonClickSound);
     }
     public void OpenMenu()

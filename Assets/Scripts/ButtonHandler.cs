@@ -21,11 +21,8 @@ public class ButtonHandler : MonoBehaviour
 
     public void OnRightClick()
     {
-        
-        
         _currentDisplay.CurrentRoom++;
         SoundManager.instance.PlaySound(footstepSound);
-       
     }
 
     public void OnLeftClick()

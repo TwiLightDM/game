@@ -1549,3 +1549,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickSound: {fileID: 8300000, guid: 63a973835b10320458b5920e6a78cf8b, type: 3}
+  debug: 0
