@@ -1173,7 +1173,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a89e584bd8f08c746be247a388cfe3b4, type: 3}
+  m_Sprite: {fileID: 7988440511071066324, guid: 2dc12ad8908ff3047bb25165c5b3aee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1450,6 +1450,7 @@ MonoBehaviour:
   menuMusic: {fileID: 8300000, guid: 24ac6a4651f3bcd47a6cff3c2f007762, type: 3}
   footstepSound: {fileID: 0}
   spriteName: 
+  objectToShow: {fileID: 0}
 --- !u!114 &1895706121
 MonoBehaviour:
   m_ObjectHideFlags: 0

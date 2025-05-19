@@ -10,8 +10,12 @@ public class ButtonHandler : MonoBehaviour
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip footstepSound;
     public string spriteName;
+   
+    
+    [SerializeField] private GameObject objectToShow; 
     void Start()
     {
+      
         SoundManager.instance.PlaySound(menuMusic);
         _currentDisplay = GameObject.Find("displayImage").GetComponent<DisplayImage>();
         if (Camera.main == null) return;
@@ -34,6 +38,10 @@ public class ButtonHandler : MonoBehaviour
 
     public void OnReturnClick()
     {
+        if (objectToShow != null && !objectToShow.activeInHierarchy)
+        {
+            objectToShow.SetActive(true);
+        }
         if (_currentDisplay.CurrentState == DisplayImage.State.Zoom)
         {
             SoundManager.instance.PlaySound(footstepSound);
@@ -70,4 +78,5 @@ public class ButtonHandler : MonoBehaviour
         SoundManager.instance.PlaySound(buttonClickSound);
         Application.Quit();
     }
+  
 }
