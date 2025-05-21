@@ -34,7 +34,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
         // Сохраняем предыдущий выбранный слот
         inventory.PreviousSelectedSlot = inventory.CurrentSelectedSlot;
-        inventory.CurrentSelectedSlot = this.gameObject;
+        inventory.CurrentSelectedSlot = gameObject;
 
         // Проверяем, что предыдущий слот существует и не пустой
         if (inventory.PreviousSelectedSlot != null && 
@@ -60,9 +60,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         }
         lastClickTime = Time.time;
     }
-
-
-     
 
     public void AssignProperty(int orderNumber, string displayImage, string combinationItem)
     {

@@ -8,7 +8,6 @@ public class Messeges : MonoBehaviour, IInteractable
     [SerializeField] private string message;
     [SerializeField] private AudioClip footstepSound;
     [SerializeField] private AudioClip additionalSound;
-    // Start is called before the first frame update
     public void Interact(DisplayImage currentDisplay)
     {
       

@@ -25,8 +25,6 @@ public class ChangeViewTwice : MonoBehaviour, IInteractable
     private GameObject _textPanel;
     private DisplayImage _currentDisplay;
     private bool _isZoomed = false;
-    // private float checkDelay = 1f; 
-    // private float timer = 0f;
     private bool _isFlashlightOn = false;
 
     void Start()
