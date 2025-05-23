@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   password: 1234
   openLockerSprite: {fileID: 0}
+  openLocker: {fileID: 0}
   numbersSprites: []
   currentIndividualIndex: 00000000000000000000000000000000
 --- !u!1 &3383957652053365830
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2a5d288052426489648dedd3c7917b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  digits: {fileID: 8300000, guid: 63a973835b10320458b5920e6a78cf8b, type: 3}
 --- !u!1 &3383957652231947900
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2a5d288052426489648dedd3c7917b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  digits: {fileID: 8300000, guid: 63a973835b10320458b5920e6a78cf8b, type: 3}
 --- !u!1 &3383957652663237168
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2a5d288052426489648dedd3c7917b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  digits: {fileID: 8300000, guid: 63a973835b10320458b5920e6a78cf8b, type: 3}
 --- !u!1 &3383957652980173084
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,3 +552,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2a5d288052426489648dedd3c7917b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  digits: {fileID: 8300000, guid: 63a973835b10320458b5920e6a78cf8b, type: 3}

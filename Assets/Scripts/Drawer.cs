@@ -6,13 +6,15 @@ public class Drawer : MonoBehaviour, IInteractable
 {
     public string unlockItem;
     private GameObject _inventory;
-  
+    public bool isPiano;
+    public bool isThrone;
+    public GameObject throneView;
     private bool _isUnlocked = false; // Флаг, что комод разблокирован
     private bool _keyUsed = false; // Флаг, что ключ был использован
     private ChangeView _changeView; // Ссылка на компонент ChangeView
-    // [SerializeField] private AudioClip openCabinetSoundSound;
     [SerializeField] private AudioClip lockedCabinetSound;
     [SerializeField] private AudioClip keySound;
+    public GameObject[] keys;
     
     void Start()
     {
@@ -50,6 +52,18 @@ public class Drawer : MonoBehaviour, IInteractable
             Debug.Log("Ключ использован! Теперь можно открыть комод");
             _keyUsed = true;
             _inventory.GetComponent<Inventory>().CurrentSelectedSlot.GetComponent<Slot>().ClearSlot();
+            if (isPiano)
+            {
+                foreach (GameObject key in keys)
+                {
+                    key.SetActive(true);
+                }
+            }
+
+            if (isThrone)
+            {
+                throneView.SetActive(true);
+            }
             
             // Не открываем комод сразу, только отмечаем, что ключ использован
         }
