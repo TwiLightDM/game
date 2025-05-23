@@ -34,11 +34,10 @@ public class Drawer : MonoBehaviour, IInteractable
             return;
         }
 
-        // Если ключ уже использован, но комод еще не открыт
+        // Если ключ уже использован
         if (_keyUsed)
         {
             _isUnlocked = true;
-            _changeView?.Interact(currentDisplay);
             return;
         }
 

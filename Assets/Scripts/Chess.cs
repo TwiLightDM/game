@@ -33,10 +33,7 @@ public class Chess : MonoBehaviour, IPointerClickHandler
     }
     void VerifyPassword()
     {
-        if (_isCorrectPassword == true)
-        {
-            return;
-        }
+       
         if (Input.GetKeyDown(KeyCode.Return))
         {
             _inputPassword = screenPanel.transform.Find("Text Area/Text").GetComponent<TextMeshProUGUI>().text.Replace("\u200B", "").Trim();
